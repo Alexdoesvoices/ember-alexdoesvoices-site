@@ -1,0 +1,57 @@
+{{!-- This is the updated code for your Ember.js navbar. --}}
+{{!-- It now includes a box around each link and highlights the active page. --}}
+
+<style>
+  /* Styling for the navigation entries */
+  .nav-entry-style {
+    display: inline-block;
+    padding: 0.75rem 1.25rem; /* Space inside the box */
+    border: 1px solid #d1d5db; /* A light gray border */
+    border-radius: 0.5rem; /* Rounded corners */
+    text-decoration: none; /* Remove underline from links */
+    color: #4b5563; /* Dark gray text color */
+    font-weight: 500;
+    background-color: aliceblue;
+    transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
+  }
+
+  /* Hover effect for the navigation entries */
+  .nav-entry-style:hover {
+    border-color: #3b82f6; /* Blue border on hover */
+    color: #1f2937; /* Darker text on hover */
+    background-color: #eff6ff; /* Light blue background on hover */
+  }
+
+  /* Style for the active link (the current page) */
+  .nav-entry-style.active {
+    background-color: #3b82f6; /* A solid blue background */
+    color: white; /* White text for contrast */
+    border-color: #3b82f6; /* Blue border to match */
+  }
+
+  /* Flexbox styles for the parent container */
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Space between the link boxes */
+    align-items: center;
+  }
+</style>
+
+<nav class="menu">
+  <div class="links">
+    {{!-- The LinkTo component for the "About" page --}}
+    {{!-- It will automatically get the 'active' class when the about route is active --}}
+    <LinkTo @route="about" class="menu-about nav-entry-style">
+      About
+    </LinkTo>
+    {{!-- The LinkTo component for the "Equipment" page --}}
+    {{!-- It will get the 'active' class when the equipment route is active --}}
+    <LinkTo @route="equipment" class="menu-equipment nav-entry-style">
+      Equipment
+    </LinkTo>
+    <LinkTo @route="portfolio" class="menu-portfolio nav-entry-style">
+      Portfolio
+    </LinkTo>
+  </div>
+</nav>
