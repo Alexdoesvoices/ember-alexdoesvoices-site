@@ -10,4 +10,5 @@ Router.map(function () {
   this.route('about');
   this.route('equipment');
   this.route('portfolio');
+  this.route('magic');
 });
